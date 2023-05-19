@@ -1,0 +1,26 @@
+{
+    "name": "marpdocs",
+    "version": "1.0.0",
+    "main": "matmarp.js",
+    "type": "module",
+    "devDependencies": {
+        "@marp-team/marp-cli": "^2.5.0",
+        "eslint": "^8.40.0"
+    },
+    "scripts": {
+        "main": "node matmarp.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "@marp-team/marp-core": "^3.6.0",
+        "convert-html-to-pdf": "^1.0.1",
+        "markdown-it": "^13.0.1",
+        "markdown-it-anchor": "^8.6.7",
+        "markdown-it-container": "^3.0.0",
+        "markdown-it-table-of-contents": "^0.6.0",
+        "puppeteer": "^20.2.1"
+    }
+}

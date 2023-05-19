@@ -1,0 +1,43 @@
+/* 
+    @theme document 
+    @auto-scaling true
+*/
+
+@import 'default';
+
+:root {
+    --justify: justify;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: var(--justify);
+    width: 210mm;
+    height: 297mm;
+    color: black;
+    font-family: 'CMU Serif', 'Raleway', sans-serif;
+    font-weight: 400;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+p {
+    font-size: 20px;
+}
+
+li {
+    font-size: 20px;
+}

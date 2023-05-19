@@ -1,0 +1,122 @@
+/* 
+    @theme rosamat-slides 
+    @auto-scaling true
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --primary: #282D46;
+    --secondary: #00B2E3;
+    --outline: #282D4690;
+    --text: black;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    font-family: 'Outfit', sans-serif;
+    color: black;
+    padding: 1cm;
+    font-size: 15pt;
+}
+
+/* Styling page number */
+section::after {
+    color: white;
+    background-color: var(--secondary);
+    padding-block: 8pt;
+    padding-inline: 20pt;
+    border-radius: 50pt;
+    font-weight: bold;
+    position: absolute;
+    top: 1cm;
+    bottom: auto;
+    right: 1cm;
+    border: 1pt solid var(--outline);
+    opacity: 96%;
+    font-weight: 600;
+    font-size: 20pt;
+}
+
+section.title {
+    background: linear-gradient(white 75%, var(--primary) 25%);
+    color: white;
+}
+
+section.title .logos {
+    display: flex;
+    height: 25%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 2.7%;
+    padding-left: 0;
+    box-sizing: border-box;
+}
+
+section.title .logos img {
+    max-height: 100%;
+    width: auto;
+}
+
+h1 {
+    color: var(--primary);
+    font-size: 60pt;
+    font-weight: 800;
+    margin: 0;
+}
+
+h2 {
+    color: var(--secondary);
+    font-size: 40pt;
+    font-weight: 700;
+    margin: 0;
+}
+
+
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: fit-content;
+    box-shadow: 10pt 10pt 12pt 0pt rgba(0, 0, 0, 0.04);
+}
+
+td,
+th {
+    border: solid 1pt var(--outline);
+    padding: 10pt;
+    padding-inline: 15pt;
+}
+
+th {
+    color: var(--secondary);
+}
+
+thead:first-child th:first-child {
+    border-top-left-radius: 8pt;
+}
+
+thead:first-child th:last-child {
+    border-top-right-radius: 8pt;
+}
+
+tr:last-child td:first-child {
+    border-bottom-left-radius: 8pt;
+}
+
+tr:last-child td:last-child {
+    border-bottom-right-radius: 8pt;
+}
+
+tr:first-child td {
+    border-top-style: solid;
+}
+
+tr td:first-child {
+    border-left-style: solid;
+}
