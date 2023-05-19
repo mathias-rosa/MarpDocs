@@ -2,7 +2,12 @@ import { Marp } from "@marp-team/marp-core";
 import anchor from "markdown-it-anchor";
 import tableOfContents from "markdown-it-table-of-contents";
 
-function convert(file, theme = "") {
+function convert(file, theme, lang) {
+    let tocHeader = "Table of Contents";
+    if (lang === "fr") {
+        tocHeader = "Table des matières";
+    }
+
     const marp = new Marp({
         // marp-core constructor options
         markdown: {
@@ -12,7 +17,11 @@ function convert(file, theme = "") {
         math: "mathjax",
     })
         .use(anchor)
-        .use(tableOfContents, { includeLevel: [2, 3, 4], listType: "ol" });
+        .use(tableOfContents, {
+            includeLevel: [2, 3, 4],
+            listType: "ol",
+            containerHeaderHtml: `<h2>${tocHeader}</h2>`,
+        });
 
     if (theme !== "") {
         marp.themeSet.default = marp.themeSet.add(theme);

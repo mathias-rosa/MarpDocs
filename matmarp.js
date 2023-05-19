@@ -7,6 +7,7 @@ let input = "";
 let output = "";
 let theme = "";
 let fileFormat = "pdf";
+let lang = Intl.DateTimeFormat().resolvedOptions().locale;
 
 function help() {
     console.log("Usage: matmarp [options] <markdown>");
@@ -18,6 +19,7 @@ function help() {
         "  -o, --output   Output file path (default : match input file name))))"
     );
     console.log("  -t, --theme    Theme file path (optional)");
+    console.log("  --lang         Language (default : system language)");
     console.log("  --html         Convert to HTML");
 }
 
@@ -66,6 +68,7 @@ if (args.length === 0) {
 }
 args.forEach((arg, i) => {
     if (i + 1 >= args.length && !["-h", "--help", "--html"].includes(arg)) {
+        console.error("Missing argument for option " + arg + ".");
         return;
     }
     switch (arg) {
@@ -85,6 +88,9 @@ args.forEach((arg, i) => {
         case "--theme":
             theme = getTheme(args[i + 1]);
             break;
+        case "--lang":
+            lang = args[i + 1];
+            break;
         case "--html":
             fileFormat = "html";
             console.log(fileFormat);
@@ -99,7 +105,7 @@ if (input === "") {
 
 const inputFile = fs.readFileSync(input, "utf-8");
 
-const outputFile = convert(inputFile, theme);
+const outputFile = convert(inputFile, theme, lang.split("-")[0]);
 
 if (output === "") {
     output = input.replace(/\.md$/, "");

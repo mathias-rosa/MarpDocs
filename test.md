@@ -6,8 +6,8 @@ marp: true
 <!-- _class : title -->
 <!-- _paginate : false -->
 
-# Titre de la Présentation
-## Auteur 
+<h1>Titre de la Présentation </h1>
+<h2>Auteur</h2> 
 
 
 <div class="logos">
@@ -19,8 +19,6 @@ marp: true
 </div>
 
 ---
-
-## Table des matières
 
 [[TOC]]
 
