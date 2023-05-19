@@ -12,7 +12,7 @@ function convert(file, theme = "") {
         math: "mathjax",
     })
         .use(anchor)
-        .use(tableOfContents);
+        .use(tableOfContents, { includeLevel: [2, 3, 4], listType: "ol" });
 
     if (theme !== "") {
         marp.themeSet.default = marp.themeSet.add(theme);
